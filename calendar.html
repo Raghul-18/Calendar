@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Calendar</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="manifest" href="./manifest.json">
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="center-container">
+  <div id="calendar" class="calendar">
+    <div class="calendar-title">
+      <div class="calendar-title-text"></div>
+      <div class="calendar-button-group">
+        <button id="prevMonth">&lt;</button>
+        <button id="today">Today</button>
+        <button id="nextMonth">&gt;</button>
+      </div>
+    </div>
+    <div class="calendar-day-name"></div>
+    <div class="calendar-dates"></div>
+  </div>
+</div>
+
+<!-- partial -->
+  <script src='https://unpkg.com/dayjs@1.8.21/dayjs.min.js'></script><script  src="./script.js"></script>
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker.register("./service-worker.js")
+          .then((registration) => {
+            console.log("Service Worker registered with scope:", registration.scope);
+          })
+          .catch((error) => {
+            console.log("Service Worker registration failed:", error);
+          });
+      });
+    }
+    </script>
+    
+</body>
+</html>
