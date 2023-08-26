@@ -1,9 +1,7 @@
 let currentDate = dayjs();
 let daysInMonth = dayjs().daysInMonth();
 let firstDayPosition = dayjs().startOf("month").day();
-let monthNames = [
-  "January","February","March","April","May","June","July","August","September","October","November","December"
-];
+let monthNames = ["January","February","March","April","May","June","July","August","September","October","November","December"];
 let weekNames = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 let dateElement = document.querySelector("#calendar .calendar-dates");
 let calendarTitle = document.querySelector(".calendar-title-text");
